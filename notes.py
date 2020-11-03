@@ -59,7 +59,7 @@ def delete_note(note):
 def print_notes():
     """Output all notes"""
     for note in note_list:
-        if time.time() == note.timestamp:
+        if time.time() <= note.timestamp + 86400:
             time_or_date = dt.datetime.fromtimestamp(note.timestamp).strftime('%H:%M')
         else:
             time_or_date = dt.datetime.fromtimestamp(note.timestamp).strftime('%d.%m.%Y')
